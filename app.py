@@ -53,8 +53,8 @@ if user_input:
 if st.session_state['generated']:
     for i in range(len(st.session_state['generated']) - 1, -1, -1):
         # message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
-        st.markdown('''**You:** {st.session_state['past'][i]}''')
+        st.markdown(f"**You:** {st.session_state['past'][i]}")
         # message(st.session_state["generated"][i], key=str(i))
-        st.markdown('''**AI:** {st.session_state["generated"][i]}''')
+        st.markdown(f"**AI:** {st.session_state['generated'][i]}")
         # 添加分隔符，跟输入框的长度一致
-        st.markdown('''---''')
+        st.markdown('---')
