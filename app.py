@@ -24,7 +24,7 @@ def generate_response(messages):
 
 st.set_page_config(page_title="lesen_chatgpt")
 
-st.markdown("# 欢迎使用ChatLesen[乐森ChatGPT] - for Jane")
+st.markdown("# 欢迎使用ChatLesen[乐森ChatGPT]")
 # 增加一个按钮，点击后清空对话记录，重新开始对话
 if st.button('清空对话'):
     st.balloons()
