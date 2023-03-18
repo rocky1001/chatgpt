@@ -10,7 +10,7 @@ def generate_response(messages):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # The name of the OpenAI chatbot model to use
         messages=messages,  # The conversation history up to this point, as a list of dictionaries
-        temperature=0.5,  # The "creativity" of the generated response (higher temperature = more creative)
+        temperature=0.7,  # The "creativity" of the generated response (higher temperature = more creative)
     )
 
     # Find the first response from the chatbot that has text in it (some responses may not have text)
@@ -22,11 +22,11 @@ def generate_response(messages):
     return response.choices[0].message.content
 
 
-st.set_page_config(page_title="hello_chatgpt")
+st.set_page_config(page_title="lesen_chatgpt")
 
-st.markdown("# 当前使用模型为gpt-3.5-turbo")
+st.markdown("# 欢迎使用ChatLesen[乐森ChatGPT] - for Jane")
 # 增加一个按钮，点击后清空对话记录，重新开始对话
-if st.button('重制对话'):
+if st.button('清空对话'):
     st.balloons()
     st.session_state['generated'] = []
     st.session_state['past'] = []
@@ -55,6 +55,6 @@ if st.session_state['generated']:
         # message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
         st.markdown('**You:**%s' % st.session_state['past'][i])
         # message(st.session_state["generated"][i], key=str(i))
-        st.markdown('**ChatGPT:**%s' % st.session_state['generated'][i])
+        st.markdown('**ChatLesen:**%s' % st.session_state['generated'][i])
         # 添加分隔符，跟输入框的长度一致
         st.markdown('---')
